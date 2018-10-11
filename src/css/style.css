@@ -46,3 +46,10 @@ form {
   border-radius: 5px;
   height: 40px;
 }
+
+.btn-delete {
+  float: right;
+  margin-right: 2%;
+  margin-top: 1%;
+  padding: 1%;
+}
