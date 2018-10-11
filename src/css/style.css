@@ -14,14 +14,12 @@ form {
 
 .textarea {
   width: 100%;
-  font-family: 'Fira Sans', sans-serif;
-  font-style: italic;
 }
 
 .label {
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 150%;
-  color: #FAFAFA;
+  font-size: 180%;
+  color: rgb(238, 238, 238);
+  font-weight: bold;
 }
 
 .btn-add {
@@ -33,11 +31,6 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
-
-.row-comments {
-  margin-top: 3%;
-}
-
 
 .contenedorDeComentarios {
   background-color: rgba(250, 250, 250, 0.808);
@@ -53,3 +46,9 @@ form {
   margin-top: 1%;
   padding: 1%;
 }
+
+.font {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
+}
+

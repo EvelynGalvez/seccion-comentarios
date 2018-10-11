@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<body onload="obsCommentCollection()">
-    <form>
+<body onload="readPublication()">
+    <form id="form">
       <div class="text-center form-group">
-        <label class="label" for="exampleFormControlTextarea1">Escribe un comentario</label>
-        <textarea id="comment" class="center col-lg-4 col-md-12 col-xs-12 form-control textarea" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué te inspira hoy?..."></textarea>
-        <button type="button" class="btn-add btn btn-dark" onclick="insertComment()">Agregar comentario</button>
+        <label class="font label" for="exampleFormControlTextarea1">Escribe un comentario</label>
+        <textarea id="comment" class="font center col-lg-4 col-md-12 col-xs-12 form-control textarea" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué te inspira hoy?..."></textarea>
+        <button type="submit" class="btn-add font btn btn-dark">Agregar comentario</button>
       </div>
     </form>
 

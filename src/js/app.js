@@ -1,42 +1,37 @@
-const getValue = (id) => {
-  return document.getElementById(id).value;
-}
+document.getElementById('form').addEventListener('submit', (e) => {
+  let publication = document.getElementById('comment').value;
+  e.preventDefault();
+  createPost(publication);
+  form.reset();
+})
 
-const deleteDataTextarea = (id, data) => {
-  return document.getElementById(id).value = data;
-}
+let d = new Date();
+let t = d.getTime();
+let counter = t;
 
-const insertInHTML = (id, data) => {
-  return document.getElementById(id).innerHTML += data;
-}
-
-const dataJson = (comment) => {
-  let publication = {
-    comment: comment
+const createPost = (publication) => {
+  counter+=1;
+  let post = {
+    id: counter,
+    comment: publication
   };
-  return publication;
+
+  let db = firebase.database().ref('commentCollection/'+counter);
+  db.set(post);
+  document.getElementById('container-comments').innerHTML= '';
+  readPublication();
 }
 
-const insertComment = () => {
-  let comentario = getValue('comment');
-  let publicationArray = dataJson(comentario);
-  console.log(publicationArray);
-  let commentCollection = firebase.database().ref('commentCollection/' + comentario);
-  commentCollection.set(publicationArray);
-  deleteDataTextarea('comment', '');
-}
-
-const commentContainer = (comment) => {
-  return '<div class="contenedorDeComentarios">'+ comment + '<a href="#" class="btn-delete badge badge-danger"><i class="fas fa-trash-alt"></i></a>'+'</div>'
-}
-
-const obsCommentCollection = () => {
+const readPublication = () => {
   let commentCollection = firebase.database().ref('commentCollection/');
-  console.log(commentCollection);
   commentCollection.on('child_added', function(data){
-      let commentCollectionValue = data.val(); 
-      console.log('commentCollectionValue:' + commentCollectionValue);
-      let result = commentContainer(commentCollectionValue.comment);
-      insertInHTML('container-comments', result);
-  });
+    let commentCollectionValue = data.val(); 
+    document.getElementById('container-comments').innerHTML += '<div class="font contenedorDeComentarios">'+ commentCollectionValue.comment + '<a href="#" class="btn-delete badge badge-danger" onclick="deletePost('+commentCollectionValue.id+')"><i class="fas fa-trash-alt"></i></a>'+'</div>'
+});
+}
+
+const deletePost = (id) => {
+  let commentCollection = firebase.database().ref('commentCollection/' + id);
+  commentCollection.remove();
+  location.reload();
 }
