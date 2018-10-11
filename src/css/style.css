@@ -42,9 +42,9 @@ form {
 
 .btn-delete {
   float: right;
-  margin-right: 2%;
-  margin-top: 1%;
+  margin: 0.5%;
   padding: 1%;
+  height: 30px;
 }
 
 .font {
@@ -52,3 +52,42 @@ form {
   font-style: italic;
 }
 
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) {
+  body { 
+    background-image: url("../assets/img/fondohoja.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    color: #FAFAFA;
+  }
+  
+  .margin {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .center {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contenedorDeComentarios {
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .btn-delete {
+    float: right;
+    margin-top: 2%;
+    padding-top: 3%;
+    height: 40px;
+    width: 40px;
+    font-size: 100%;
+  }
+
+  .textarea {
+    font-size: 20px;
+  }
+}
