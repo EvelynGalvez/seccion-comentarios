@@ -1,2 +1,48 @@
 /*font-family: 'PT Sans', sans-serif;
 font-family: 'Fira Sans', sans-serif;*/
+
+body { 
+  background-image: url("../assets/img/fondohoja.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FAFAFA;
+}
+
+form {
+  margin-top: 3%;
+}
+
+.textarea {
+  width: 100%;
+  font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
+}
+
+.label {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 150%;
+  color: #FAFAFA;
+}
+
+.btn-add {
+  margin-top: 1%;
+}
+
+.center {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row-comments {
+  margin-top: 3%;
+}
+
+
+.contenedorDeComentarios {
+  background-color: rgba(250, 250, 250, 0.808);
+  color: #333;
+  margin-top: 2%;
+  border-radius: 5px;
+  height: 40px;
+}

@@ -9,9 +9,24 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans|PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<body>
+<body onload="obsCommentCollection()">
+    <form>
+      <div class="text-center form-group">
+        <label class="label" for="exampleFormControlTextarea1">Escribe un comentario</label>
+        <textarea id="comment" class="center col-lg-4 col-md-12 col-xs-12 form-control textarea" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué te inspira hoy?..."></textarea>
+        <button type="button" class="btn-add btn btn-dark" onclick="insertComment()">Agregar comentario</button>
+      </div>
+    </form>
+
+    <div class="row-comments row">
+      <div class="col-lg-2"></div>
+      <div id="container-comments" class="col-lg-8 container-comments"></div>
+      <div class="col-lg-2"></div>
+    </div>
   
 
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
